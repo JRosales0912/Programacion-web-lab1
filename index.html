@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Star Trek Trilogy</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Star Trek Inofmational Site">
+  <meta name="keywords" content="HTML,CSS,JavaScript,Star,Trek,Trilogy,Fiction,USSEnterprise">
+  <meta name="author" content="Javier Rosales">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  
+  <script>
+      function changeStyle1(elemnts)
+      {   var rightdiv = document.getElementsByClassName("movieDiv")[0];
+          var leftdiv = document.getElementsByClassName("crewDiv")[0];
+          rightdiv.parentNode.insertBefore(leftdiv,rightdiv);
+          rightdiv.className = ' col-sm-4 crewDiv';
+          leftdiv.className = ' col-sm-8 movieDiv';
+      }
+
+      function changeStyle2(elemnts)
+      {
+          var navVar = document.getElementById("navVar");
+          if (navVar.style.backgroundColor = "#034f84")
+          {            
+            navVar.classList.remove("bg-dark");
+            navVar.style.backgroundColor = "#034f84!important";
+          } 
+      }
+
+      function changeStyle3()
+      {
+        var body = document.getElementsByTagName("body")[0];
+        var btn = document.getElementById("BackgroundImageLink")
+        if(btn.textContent=="Remove Background Image")
+        {
+          btn.textContent = "Add Background Image";
+          body.classList.remove("backgroundImage");
+        }
+        else
+        {
+          btn.textContent = "Remove Background Image"
+          body.classList.add("backgroundImage");
+        }
+      }
+
+      function changeStyle4()
+      {
+        
+        var btn = document.getElementById("TextSizeLink");
+        if(document.body.classList.contains('enlarged'))
+        {          
+          btn.textContent = "Make Text Bigger";
+          document.body.classList.remove('enlarged');
+        }
+        else
+        {
+          btn.textContent = "Make Text Smaller";          
+          document.body.classList.add('enlarged');
+        }
+      }
+      
+      function changeStyle5()
+      {        
+        var btn = document.getElementById("ShowImageLink");
+        var images = document.getElementsByTagName("img")
+        
+        if(btn.textContent == "Hide Images")
+        {
+          btn.textContent = "Show Images"
+        }
+        else
+        {
+          btn.textContent = "Hide Images"
+        }
+        for (i = 0; i < images.length;i++ ) 
+        {
+            if(images[i].style.display == "none")
+            {              
+              images[i].style.display = "initial";
+            }
+            else
+            {
+              images[i].style.display = "none";
+            }
+        }
+      }
+  </script>
+  <style>
+          .fakeimg {
+              height: 200px;
+              background: #aaa;
+          }
+          img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+          }
+          
+          #navVar
+          {
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: left;
+          }
+
+          .backgroundImage 
+          {
+            background-image: url("Images/background.jpg");
+            background-color: #cccccc;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+
+          .enlarged 
+          {
+            font-size: 2.5rem;
+          }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+	<h1>Star Trek Trilogy</h1>
+  	<p>The future begins, Into the darknes & Beyond</p> 
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="navVar">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item" onclick="changeStyle1(this)">
+        <a class="nav-link" href="#">Shift Crew and Movies</a>
+      </li>
+      <li class="nav-item" onclick="changeStyle2(this)">
+        <a class="nav-link" href="#">Change Nav Bar Color</a>
+      </li>
+      <li class="nav-item" onclick="changeStyle3(this)" >
+        <a class="nav-link" href="#" id="BackgroundImageLink">Add Background Image</a>
+      </li>
+      <li class="nav-item" onclick="changeStyle4(this)">
+        <a class="nav-link" href="#" id="TextSizeLink">Make Text Bigger</a>
+      </li>
+      <li class="nav-item" onclick="changeStyle5(this)">
+        <a class="nav-link" href="#" id="ShowImageLink">Hide Images</a>
+      </li>   
+      <li>
+        <a class="nav-link" href=".\create.html" >Create</a>
+      </li>        
+      <li>
+        <a class="nav-link" href=".\update.html" >Update/Delete</a>
+      </li>      
+    </ul>
+  </div>  
+</nav>
+
+<div class="container" style="margin-top:30px">
+  <div class="row rowContainter">
+    <div class="col-sm-4  crewDiv">
+      <h2>Crew</h2>
+      <h5>Captain: James Tiberius Kirk</h5>
+      <img src="Images/kirk.jpg">
+      <p style="text-align:justify">James Tiberius Kirk was born in Riverside, Iowa, in the year 2233, where he was raised by his parents, George and Winona Kirk. Although born on Earth, Kirk lived for a time on Tarsus IV, where he was one of nine surviving witnesses to the massacre of 4,000 colonists by Kodos the Executioner.</p>
+      <p style="text-align:justify">Kirk became the first and only student at Starfleet Academy to defeat the Kobayashi Maru test, garnering a commendation for original thinking for reprogramming the computer to make the "no-win scenario" winnable. Kirk was granted a field commission as an ensign and posted to advanced training aboard the USS Republic. He was then promoted to lieutenant junior grade and returned to Starfleet Academy as a student instructor. Students could either "think or sink" in his class, and Kirk himself was "a stack of books with legs".Upon graduating in the top five percent, Kirk was promoted to lieutenant and served aboard the USS Farragut. While assigned to the Farragut, Kirk commanded his first planetary survey and survived a deadly attack that killed a large portion of the Farragut's crew, including his commanding officer, Captain Garrovick. He received his first command, a spaceship roughly equivalent to a destroyer, while still quite young.
+        Kirk became Starfleet's youngest starship captain after receiving command of the USS Enterprise for a five-year mission</p>
+      <hr class="d-sm-none">
+      <h5>First Officer: Spock</h5>      
+      <img src="Images/spock.jpg">
+      <p style="text-align:justify">
+        Spock's mother, Amanda Grayson, was a human schoolteacher from Earth and his father, Sarek, was a respected diplomat. For most of his life, Spock was torn between his emotional human side and the stern discipline of his Vulcan half until his experience with the V'Ger machine-entity in 2271 and his later death and rebirth in 2286 broadened his perspective. As of 2267 he had earned the Vulcanian Scientific Legion of Honor, had been twice decorated by Starfleet Command and held an A7 computer expert classification.
+        As a child, Spock had a pet sehlat—a cuddly Vulcan bear-like animal with claws and fangs. His older half-brother, Sybok, who was ostracized from Vulcan because he rejected the way of pure logic, was killed in 2292 after battling an alien entity at the galaxy's center that claimed to be 'God.'
+        At age 7, Spock was telepathically bonded with a young Vulcan girl named T'Pring. The telepathic touch would draw the two together when the time was right after both came of age: once every seven years all Vulcan males experiences pon farr, a powerful Vulcan mating drive which demands that they mate or die. In 2267, however, T'Pring chose Stonn, a Vulcan, over Spock, and the Vulcan returned to the U.S.S. Enterprise unwed. He did eventually marry in a ceremony attended by Lt. Jean-Luc Picard.
+        Because the young Vulcan chose to join Starfleet, he and Sarek opened an 18-year rift over Sarek's hope his son would attend the Vulcan Science Academy. Spock was the first Vulcan to enlist in the Federation Starfleet, serving aboard the U.S.S. Enterprise under Captain Christopher Pike as a lieutenant, and later for James T. Kirk.
+        After the conclusion of the U.S.S. Enterprise's five-year mission, Spock retired from Starfleet and returned to Vulcan to pursue the emotion-purging of the kohlinar discipline from the Vulcan Masters. Although he completed the training, Spock failed to achieve kohlinar because his emotions were stirred by the V'Ger entity in 2271. He then reentered Starfleet and was eventually promoted to U.S.S. Enterprise captain when that ship was assigned as a training vessel at Starfleet Academy.
+      </p>
+      <hr class="d-sm-none">
+      <h5>Communications officer: Nyota Uhura</h5>      
+      <img src="Images/girl.jpg">
+      <p style="text-align:justify">
+        Uhura served as communications officer aboard the Enterprise on one of its early five-year missions, under the command of James T. Kirk. It is not unusual to see her rewire or repair her own communications board during a crisis.
+        In Swahili the name of Uhura, a striking black woman, translates to "freedom," and she speaks that language fluently. She also has a singing voice and was known to entertain members of the U.S.S. Enterprise crew, accompanying herself on the Vulcan harp. Uhura has shown some romantic interest in Scotty, but it was never pursued. After her memory was wiped in 2267 by the space probe Nomad, Uhura spent considerable time relearning the huge pieces of information the probe had destroyed.
+        Uhura served at Starfleet Command on Earth after the reassignment of the original U.S.S. Enterprise to Starfleet Academy in 2284, where part of her duty was to give lectures. Prior to the Khitomer peace conference, Uhura returned to her former post on the U.S.S. Enterprise-A at the request of Captain Kirk.
+      </p>
+      <hr class="d-sm-none">
+    </div>
+    <div class="col-sm-8 movieDiv">
+      <h2>The Future Begins</h2>
+      <h5>Release on 2009</h5>
+      <img src="Images/1.jpg" >
+      <br>
+      <p style="text-align:justify">The greatest adventure of all time begins with <em>Star Trek</em>, the incredible story of a young crew’s maiden voyage onboard the most advanced starship ever created: the U.S.S. Enterprise.&nbsp; In the midst of an incredible journey full of optimism, intrigue, comedy and cosmic peril, the new recruits must find a way to stop an evil being whose mission of vengeance threatens all of mankind.</p>
+      <p style="text-align:justify">The fate of the galaxy rests in the hands of bitter rivals born worlds apart.&nbsp; One, James Tiberius Kirk (Chris Pine), a delinquent, thrill-seeking Iowa farm boy, a natural-born leader in search of a cause.&nbsp; The other, Spock (Zachary Quinto), grows up on the planet Vulcan, an outcast due to his half-human background, which makes him susceptible to the volatile emotions that Vulcans have long lived without, and yet an ingenious, determined student, who will become the first of his kind accepted into the Starfleet Academy. &nbsp;</p>
+      <p style="text-align:justify">Kirk and Spock could not be more different.&nbsp; Yet, in their quest to figure out who they really are and what they have to give to the world, they soon become competitive cadets-in-training.&nbsp; With their drastically opposite styles, one driven by fiery passion, the other by rigorous logic, they also become defiant, contentious adversaries, each equally unimpressed with the other, each going all out to be among the special few chosen to join the crew of the most advanced starship ever created, the U.S.S.&nbsp; Enterprise. &nbsp;</p>
+      <p style="text-align:justify">The crew is headed by Captain Christopher Pike (Bruce Greenwood).&nbsp; Joining him are the ship’s Medical Officer Leonard “Bones” McCoy (Karl Urban); the man who will become the ship’s Chief Engineer, Montgomery “Scotty” Scott (Simon Pegg); Communications Officer Uhura (Zoë Saldana); experienced Helmsman Sulu (John Cho); and the 17-year-old whiz kid Chekov (Anton Yelchin).&nbsp; All will face a harrowing first test that will set in motion the loyalty, camaraderie, daring and good humor that will bind them forever. &nbsp;</p>
+      <p style="text-align:justify">In the midst of it all, Kirk and Spock will come face-to-face with an undeniable destiny:&nbsp; a need to forge an unlikely but powerful partnership, enabling them to lead their crew to boldly go where no one has gone before. &nbsp;</p>
+      <br>
+
+      <h2>Into The Darkness</h2>
+      <h5>Release on 2013</h5>
+      <img src="Images/2.jpg" >
+      <br>
+      <p style="text-align:justify">In 2259, Captain James T. Kirk is removed from command of the starship USS Enterprise for violating the Prime Directive after exposing the ship to the primitive inhabitants of the planet Nibiru in order to save them, and Spock, from a cataclysmic volcanic eruption. Admiral Christopher Pike is reinstated as commanding officer with Kirk demoted to the rank of Commander and first officer. Commander Spock is transferred to another ship. Shortly after, the Section 31 installation in London is bombed by renegade Starfleet operative John Harrison. Harrison attacks Starfleet Headquarters in a jumpship during an emergency meeting about the situation, killing Pike and other senior officers. Kirk disables the jumpship, but Harrison transports to Kronos, homeworld of the hostile Klingons.
+      </p><p style="text-align:justify">
+      Admiral Alexander Marcus reinstates Kirk and Spock to Enterprise with orders to kill Harrison using a new long range stealth photon torpedo. Chief Engineer Montgomery Scott objects to allowing untested torpedoes on board the ship without knowing their specifications; when he is overruled, he resigns. Kirk assigns Pavel Chekov to replace Scotty. En route to Kronos, Enterprise's warp capabilities become disabled. Kirk leads a team with Spock and Uhura onto the planet in a small landing craft, where they are ambushed by Klingon patrols who order them to land. Uhura leaves the landing craft to talk to the Klingons. They decide to kill Uhura, but Harrison kills them. After the battle, Harrison demands that Kirk tell him the number of torpedoes on board the Enterprise, surrendering when Spock tells him.
+      </p><p style="text-align:justify">
+      Dr. Leonard McCoy and Marcus's daughter, Dr. Carol Marcus, open a torpedo at Harrison's behest, revealing a man in cryogenic stasis. Upon further investigation, all the other experimental torpedoes are revealed to similarly contain cryogenically frozen humans. Harrison is taken to the ship's brig, where he reveals his true identity as Khan, a genetically engineered superhuman awoken by Admiral Marcus from centuries of suspended animation to develop advanced weapons. Khan reveals that Marcus sabotaged Enterprise's warp drive, intending for the Klingons to destroy the ship after it fired on Kronos, creating an act of war by the Klingon Empire. Khan also gives Kirk a set of coordinates. Kirk contacts Scotty on Earth and asks him to investigate. Scotty discovers the coordinates lead to a covert Starfleet facility near Jupiter.
+      </p><p style="text-align:justify">
+      Enterprise is intercepted by a much larger Starfleet warship, USS Vengeance, commanded by Admiral Marcus. Marcus demands that Kirk deliver Khan, but Enterprise flees to Earth to expose him. After Vengeance disables Enterprise near the Moon, Carol reveals her presence aboard the ship. Marcus forcibly transports Carol to Vengeance before ordering Enterprise's destruction. Kirk offers Khan and himself for the lives of his crew, but Marcus rejects Kirk's offer, revealing he never intended to spare them and orders Vengeance to attack. Vengeance suddenly loses power after being sabotaged by Scotty, who infiltrated the ship. With transporters down, Kirk and Khan, with the latter's knowledge of the warship's design, space-jump to Vengeance. Spock contacts his older self, who warns that Khan is ruthless and untrustworthy and that Khan's older self was only defeated at a terrible cost. After capturing the bridge, Khan overpowers Kirk, Scott and Carol, kills Marcus, and takes control of Vengeance.
+      </p><p style="text-align:justify">
+      Khan demands that Spock return his crew in exchange for the Enterprise officers. Spock complies but surreptitiously removes Khan's frozen crew from the torpedoes and arms the warheads. Khan beams Kirk, Scott and Carol aboard Enterprise, but betrays their agreement by attacking Enterprise; however, Vengeance is disabled when the torpedoes detonate. With both starships caught in Earth's gravity, they plummet toward the surface. Kirk enters the radioactive reactor chamber to realign the warp core, sacrificing himself to save the ship.
+      </p><p style="text-align:justify">
+      Khan crashes the Vengeance into downtown San Francisco in an attempt to destroy Starfleet headquarters. Khan escapes the wreckage so Spock transports down in pursuit. McCoy discovers that Khan's blood has regenerative properties that may save Kirk. Spock pursues Khan through the city and is about to kill him, but Uhura stops him. Khan's blood revives Kirk. One year later, Kirk speaks at Enterprise's re-dedication ceremony. Khan is sealed in his cryogenic pod and stored with his compatriots. The Enterprise crew embarks on a five-year exploratory mission.
+      </p>
+      <br>
+
+      <h2>Beyond</h2>
+      <h5>Release on 2016</h5>
+      <img src="Images/3.jpg" >
+      <br>
+      <p>Three years into its mission, the USS Enterprise arrives at Yorktown, a massive space station, for resupply and shore leave for her crew. Struggling to find meaning in their endless exploration, Captain James T. Kirk has applied for a promotion to vice admiral; he recommends Spock as his replacement. Meanwhile, Hikaru Sulu reunites with his family, Montgomery Scott works to keep the ship operational, and Spock and Nyota Uhura amicably end their relationship; Spock also receives word from New Vulcan that Ambassador Spock, his counterpart from the original timeline, has died.
+      </p><p style="text-align:justify">
+      The Enterprise is sent on a rescue mission after an escape pod drifts out of a nearby uncharted nebula. Its occupant, Kalara, claims her ship is stranded on Altamid, a planet in the nebula. As the Enterprise exits an asteroid field within the nebula, a massive swarm of small ships ambushes and quickly overwhelms the starship, disconnecting the ship's warp nacelles in a matter of seconds. The swarm's leader, Krall, and his crew board the crippled Enterprise, capture and kill many crew members, and recover a relic, the Abronath, that Kirk had recently obtained. Scotty manages to restore enough power for the ship to attempt to flee, but Krall orders his swarm to destroy the Enterprise, and they smash the ship in half. Kirk, having recovered the Abronath, orders the crew to abandon ship, leaving the remains of the Enterprise to crash on Altamid.
+      </p><p style="text-align:justify">
+      On the planet, Krall captures Sulu, Uhura and other survivors. Kirk and Pavel Chekov, accompanied by Kalara, locate the Enterprise's saucer section. Realising that Kalara knew they would be attacked, they trick her into revealing herself as Krall's spy. To escape Krall's soldiers, Kirk and Chekov use the ship's thrusters to flip the saucer over, and Kalara is killed in the maneuver. Elsewhere on the planet, Dr. Leonard McCoy and a wounded Spock search for other survivors. Spock explains to McCoy that the tension he witnessed between him and Uhura at Yorktown was due to his intention to leave Starfleet to help the Vulcan survivors, and continue the late Ambassador Spock's work. Jaylah, a scavenger who previously escaped Krall's encampment, rescues Scott and takes him to her makeshift home, the grounded USS Franklin, an early Starfleet vessel reported missing over a century earlier. Scott is reunited with Kirk, Chekov, McCoy and Spock. Threatening to kill the crew, Krall coerces Ensign Syl to hand over the Abronath that she had concealed for Kirk, then uses it on her to demonstrate an ancient bioweapon that can disintegrate any humanoid. With the device complete, Krall intends to kill Yorktown's inhabitants, then use the base to attack the Federation. Kirk and the others free the crew as Krall launches into space with the bioweapon, leading his drones to Yorktown.
+      </p><p style="text-align:justify">
+      As the Enterprise survivors power up the Franklin and launch her in pursuit of Krall, they deduce that such a massive swarm must coordinate its attacks via radio signals, specifically on the VHF frequency. Scott transports Spock and McCoy into one of the swarm ships to seize control of it. Matching the swarm's frequency, they jam and disorient the swarm by broadcasting the 1994 song "Sabotage" by the Beastie Boys, destroying almost the entire fleet. Krall and his three surviving ships, one of which contains Spock and McCoy, are chased by the Franklin through Yorktown. The chase ends at the station's headquarters, where the Franklin's sudden appearance causes the three ships to smash into it. As Krall flees into the starbase, Uhura and Kirk discover from the Franklin's logs that he is actually Balthazar Edison, former captain of the Franklin. A pre-Federation human soldier, Edison rejected the Federation's principles of unity and cooperation with former enemies like the Xindi. When he and his crew were stranded on Altamid by a wormhole, the three survivors used the extinct natives's technology to prolong their lives at the cost of the others, and re-purposed the ancient race's dormant drone workers into the swarm. Thinking the Federation had abandoned them, Edison planned to destroy the Federation and resume galactic conflict. Kirk pursues Edison into Yorktown's ventilation system, where Edison activates the bioweapon. Before it can activate, Kirk ejects it and Edison into space, where the weapon consumes Edison. Using the alien ship they commandeered, Spock and McCoy save Kirk moments before he is also blown into space.
+      </p><p style="text-align:justify">
+      In the aftermath, Commodore Paris closes the files of Captain Edison and the USS Franklin crew. Kirk decides to keep his position as the Enterprise's captain; Spock chooses to remain in Starfleet, and begins to renew his relationship with Uhura. On Kirk's recommendation, Jaylah is accepted into Starfleet Academy. As the crew celebrates Kirk's birthday, they watch the construction of their new ship, the USS Enterprise-A when the ship is completed, they resume their mission.
+      </p>
+      <br>
+
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h3>JAVIER ROSALES, CARNE: 1272314</h3>
+</div>
+
+</body>
+</html>
